@@ -334,7 +334,7 @@ const isButtonDisabled = computed(() => !isFormValid.value);
 const form = async () => {
   try {
     const result = await axios.post(
-      "http://127.0.0.1:5000/correo",
+      "https://backend-nine-green-90.vercel.app/correo",
       {
         correo: correo.value,
         nombre: nombre.value,

@@ -105,7 +105,7 @@ export default {
       this.errorMessage = "";
       try {
         const result = await axios.post(
-          "http://127.0.0.1:5000/reclamo",
+          "https://backend-nine-green-90.vercel.app/reclamo",
           this.form
         );
         if (result.data.success) {

@@ -35,8 +35,8 @@ export default defineNuxtConfig({
           property: "og:description",
           content: "Contamos con 50 años brindado servicios de calidad al adulto mayor",
         },
-        { property: "og:image", content: "/parte2/webp/3.webp" },
-        { property: "og:url", content: "https://tudominio.com" },
+        { property: "og:image", content: "https://elrosedal.es/parte2/webp/3.webp" },
+        { property: "og:url", content: "https://elrosedal.es/" },
         { property: "og:type", content: "website" },
 
         // Twitter Cards
@@ -49,7 +49,7 @@ export default defineNuxtConfig({
           name: "twitter:description",
           content: "Contamos con 50 años brindado servicios de calidad al adulto mayor",
         },
-        { name: "twitter:image", content: "/parte2/webp/3.webp" },
+        { name: "twitter:image", content: "https://elrosedal.es/parte2/webp/3.webp" },
       ],
     },
     pageTransition: { name: 'page', mode: 'out-in' }
