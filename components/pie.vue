@@ -4,7 +4,7 @@
       <div class="columns">
         <div>
           <p><a @click="navigateWithOffset('#parte2')" class="link">NOSOTROS</a></p>
-          <p><a @click="navigateWithOffset('#parte3')" class="link">HABITACIONES</a></p>
+          <p><a @click="navigateWithOffset('#parte3')" class="link">SEDE</a></p>
           <p><a @click="navigateWithOffset('#parte4')" class="link">CONTÁCTANOS</a></p>
           <p>
             <NuxtLink to="/libro-de-reclamacion" class="link"

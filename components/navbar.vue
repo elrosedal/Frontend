@@ -43,7 +43,7 @@ const router = useRouter();
 const navItems = [
   { label: "Inicio", href: "#parte1" },
   { label: "Nosotros", href: "#parte2" },
-  { label: "Habitaciones", href: "#parte3" },
+  { label: "Sede", href: "#parte3" },
   { label: "Contáctanos", href: "#parte4" },
 ];
 

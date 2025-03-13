@@ -4,7 +4,7 @@
       <br />
       <div class="container">
         <div class="row">
-          <h2 v-scrolls>NUESTRA HABITACIONES</h2>
+          <h2 v-scrolls>NUESTRA SEDE</h2>
         </div>
       </div>
       <br />

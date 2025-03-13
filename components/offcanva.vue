@@ -144,7 +144,7 @@ export default {
     const menuItems = [
       { text: "Inicio", anchor: "#parte1" },
       { text: "Nosotros", anchor: "#parte2" },
-      { text: "Habitaciones", anchor: "#parte3" },
+      { text: "Sede", anchor: "#parte3" },
       { text: "Contáctanos", anchor: "#parte4" },
     ];
 
