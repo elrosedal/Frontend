@@ -3,9 +3,9 @@
     <div class="container">
       <div class="columns">
         <div>
-          <p><NuxtLink to="/#parte2" class="link">NOSOTROS</NuxtLink></p>
-          <p><NuxtLink to="/#parte3" class="link">HABITACIONES</NuxtLink></p>
-          <p><NuxtLink to="/#parte4" class="link">CONTACTANOS</NuxtLink></p>
+          <p><a @click="navigateWithOffset('#parte2')" class="link">NOSOTROS</a></p>
+          <p><a @click="navigateWithOffset('#parte3')" class="link">HABITACIONES</a></p>
+          <p><a @click="navigateWithOffset('#parte4')" class="link">CONTÁCTANOS</a></p>
           <p>
             <NuxtLink to="/libro-de-reclamacion" class="link"
               >LIBRO DE RECLAMACIÓN</NuxtLink
@@ -107,6 +107,7 @@ p {
   text-decoration: none;
   color: rgb(212, 212, 212);
   transition: color 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .link:hover {
@@ -128,3 +129,39 @@ p {
   opacity: 1;
 }
 </style>
+
+<script setup>
+import { useRouter, useRoute } from 'vue-router';
+
+const router = useRouter();
+const route = useRoute();
+
+const navigateWithOffset = async (selector) => {
+  const offset = 80; // Offset de 80px
+
+  // Si ya estamos en "/", hacemos el scroll inmediatamente
+  if (route.path === "/") {
+    scrollToElement(selector, offset);
+    return;
+  }
+
+  // Si no estamos en "/", navegamos y esperamos antes de hacer el scroll
+  await router.push("/");
+
+  setTimeout(() => {
+    scrollToElement(selector, offset);
+  }, 500); // Esperamos medio segundo para asegurarnos de que la página cargó
+};
+
+// Función para hacer scroll con offset
+const scrollToElement = (selector, offset) => {
+  const element = document.querySelector(selector);
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: elementPosition - offset,
+      behavior: "smooth",
+    });
+  }
+};
+</script>

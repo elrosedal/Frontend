@@ -131,12 +131,13 @@
 </style>
 
 <script>
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { ref, onMounted, onUnmounted } from "vue";
 
 export default {
   setup() {
     const route = useRoute();
+    const router = useRouter();
     const showSidebar = ref(false);
     const showBackground = ref(false);
 
@@ -144,7 +145,7 @@ export default {
       { text: "Inicio", anchor: "#parte1" },
       { text: "Nosotros", anchor: "#parte2" },
       { text: "Habitaciones", anchor: "#parte3" },
-      { text: "Contactanos", anchor: "#parte4" },
+      { text: "Contáctanos", anchor: "#parte4" },
     ];
 
     const toggleSidebar = () => {
@@ -152,18 +153,28 @@ export default {
       document.body.style.overflow = showSidebar.value ? "hidden" : "";
     };
 
-    const closeSidebar = (anchor = null) => {
+    const closeSidebar = async (anchor = null) => {
       showSidebar.value = false;
       document.body.style.overflow = "";
 
       if (typeof anchor === "string" && anchor.startsWith("#")) {
-        const targetElement = document.querySelector(anchor);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 60,
-            behavior: "smooth",
-          });
+        // Si NO estamos en "/", primero navega a "/"
+        if (route.path !== "/") {
+          await router.push("/");
+          setTimeout(() => scrollToElement(anchor), 500); // Espera antes de hacer scroll
+        } else {
+          scrollToElement(anchor); // Scroll inmediato si ya estamos en "/"
         }
+      }
+    };
+
+    const scrollToElement = (selector) => {
+      const targetElement = document.querySelector(selector);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 75,
+          behavior: "smooth",
+        });
       }
     };
 
@@ -189,6 +200,7 @@ export default {
 
     return {
       route,
+      router,
       showSidebar,
       showBackground,
       menuItems,

@@ -8,14 +8,14 @@
         <div class="absolute_dentro">
           <div class="container"></div>
           <div class="row texto2" style="pointer-events: none">
-            <div>
-              <h1>Cuidamos con amor a sus ser querido</h1>
+            <div class="container2">
+              <h1>Cuidamos con amor a tus seres querido</h1>
               <p>
-                 50 años brindado servicios de calidad al adulto mayor
+                 50 años brindado servicios de calidad al adulto mayor.
               </p>
               <div class="width">
                 <a href="https://api.whatsapp.com/send?phone=51934116882&text=Hola%20quisiera%20m%C3%A1s%20informaci%C3%B3n">
-                  <button class="btn">CONTACTANOS</button>
+                  <button class="btn">CONTÁCTANOS</button>
                 </a>
               </div>
             </div>
@@ -124,11 +124,22 @@ const swiper = useSwiper(containerRef, {
   p {
     font-size: clamp(20px, 1.5vw, 2vw);
   }
+  .container {
+    padding-right: 35px;
+    padding-left: 35px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 h1,
-p,
 button {
+  pointer-events: auto;
+  margin: 0;
+  padding: 0
+}
+
+p {
   pointer-events: auto;
 }
 

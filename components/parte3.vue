@@ -4,7 +4,7 @@
       <br />
       <div class="container">
         <div class="row">
-          <h2 v-scrolls>NUESTRA CASA</h2>
+          <h2 v-scrolls>NUESTRA HABITACIONES</h2>
         </div>
       </div>
       <br />
@@ -131,7 +131,7 @@ const images = [
 }
 
 .background {
-  background: linear-gradient(rgba(22, 95, 120, 1), rgba(22, 95, 120, 1))
+  background: rgb(46, 74, 50)
 }
 
 .slider {

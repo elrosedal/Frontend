@@ -44,7 +44,7 @@ const navItems = [
   { label: "Inicio", href: "#parte1" },
   { label: "Nosotros", href: "#parte2" },
   { label: "Habitaciones", href: "#parte3" },
-  { label: "Contactanos", href: "#parte4" },
+  { label: "Contáctanos", href: "#parte4" },
 ];
 
 const handleScroll = () => {
@@ -52,22 +52,37 @@ const handleScroll = () => {
 };
 
 const scrollTo = async (selector) => {
-  if (route.path !== "/") {
-    await router.push("/"); // Redirige a la página de inicio
+  const offset = (selector === "#parte2" || selector === "#parte3") ? 80 : 0;
+
+  // Si ya estamos en "/", hacemos scroll inmediatamente
+  if (route.path === "/") {
+    scrollToElement(selector, offset);
+    return;
   }
 
-  // Espera un pequeño tiempo para que cargue la página antes de hacer el scroll
+  // Si estamos en otra ruta, primero navegamos a "/" y luego esperamos
+  await router.push("/");
+
   setTimeout(() => {
-    document.querySelector(selector)?.scrollIntoView({
+    scrollToElement(selector, offset);
+  }, 500); // Espera 500ms antes de hacer scroll
+};
+
+const scrollToElement = (selector, offset) => {
+  const element = document.querySelector(selector);
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: elementPosition - offset,
       behavior: "smooth",
-      block: "start",
     });
-  }, 90); // Ajusta el delay si es necesario
+  }
 };
 
 onMounted(() => window.addEventListener("scroll", handleScroll));
 onUnmounted(() => window.removeEventListener("scroll", handleScroll));
 </script>
+
 
 <style scoped>
 @media screen and (min-width: 780px) {

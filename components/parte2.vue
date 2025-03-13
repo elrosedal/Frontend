@@ -48,15 +48,15 @@
         </div>
         <div class="texto col-6 order" v-scrolls>
           <div class="texto2">
-            <h2>NUESTRO HISTORIA</h2>
+            <h2>NUESTRA HISTORIA</h2>
             <p align="justify">
-              El Rosedal fue fundado el 5 de diciembre de 1975 por la licenciada Hilmer Rosa tenicela Collazos y Antonio tenicela Collazos. 
+              El Rosedal fue fundado el 5 de diciembre de 1975 por la licenciada Hilmer Rosa Tenicela Collazos y Antonio Tenicela Collazos. 
               Nosotros brindamos un hogar cálido y seguro para adultos mayores, donde el bienestar, el respeto y la calidad de vida son nuestra 
               prioridad. Contamos con un equipo de profesionales dedicados que ofrecen atención integral, brindar asistencia médica y actividades 
               diseñadas para mantenerlos activos.
             </p>
             <a href="https://api.whatsapp.com/send?phone=51934116882&text=Hola%20quisiera%20m%C3%A1s%20informaci%C3%B3n">
-              <button class="btn">Contactanos</button>
+              <button class="btn">CONTÁCTANOS</button>
             </a>
           </div>
         </div>
