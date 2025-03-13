@@ -9,7 +9,7 @@
           <div class="container"></div>
           <div class="row texto2" style="pointer-events: none">
             <div class="container2">
-              <h1>Cuidamos con amor a tus seres querido</h1>
+              <h1>Cuidamos con amor a tus seres queridos</h1>
               <p>
                  50 años brindado servicios de calidad al adulto mayor.
               </p>
